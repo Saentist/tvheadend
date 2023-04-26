@@ -566,14 +566,14 @@ endif
 
 ifeq (yes,$(CONFIG_NVENC))
 
-## YOU MUST INSTALL CUDA from NVIDIA for "libnpp" 
+## YOU MUST INSTALL CUDA from NVIDIA for "libnpp"
 EXTLIBS   += nvenc cuvid libnpp
 ENCODERS  += h264_nvenc hevc_nvenc
 DECODERS  += h264_cuvid hevc_cuvid
 HWACCELS  += h264_nvdec hevc_nvdec vp8_nvdec vp9_nvdec mjpeg_nvdec mpeg1_nvdec mpeg2_nvdec mpeg4_nvdec
 ECFLAGS   += -I/usr/local/cuda/include
 
-## NVIDIA LIB for "libnpp" 
+## NVIDIA LIB for "libnpp"
 CONFIGURE_FFMPEG += --extra-ldflags=-L/usr/local/cuda/lib64
 
 $(LIB_ROOT)/$(FFNVCODEC)/.tvh_download:
