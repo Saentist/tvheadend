@@ -1,12 +1,12 @@
 ![TVHeadend Logo](https://github.com/tvheadend/tvheadend/raw/master/src/webui/static/img/satip-icon120.png)
 Tvheadend
 ========================================
-(c) 2006 - 2022 Tvheadend Foundation CIC
+(c) 2006 - 2022 Tvheadend Project (https://tvheadend.org)
 
 Status
 ------
 
-[![Build Status](https://github.com/tvheadend/tvheadend/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/tvheadend/tvheadend/actions/workflows/build.yml)
+[![Build Status](https://github.com/tvheadend/tvheadend/actions/workflows/build-cloudsmith.yml/badge.svg?branch=master)](https://github.com/tvheadend/tvheadend/actions/workflows/build-cloudsmith.yml)
 [![Coverity Scan](https://scan.coverity.com/projects/2114/badge.svg)](https://scan.coverity.com/projects/2114)
 [![Github last commit](https://img.shields.io/github/last-commit/tvheadend/tvheadend)](https://github.com/tvheadend/tvheadend)
 
@@ -39,6 +39,14 @@ It supports the following outputs:
   * HTTP
   * HTSP (own protocol)
   * SAT>IP
+
+Running in docker
+-----------------
+Running in docker can be as simple as
+
+	$ docker run --rm ghcr.io/tvheadend/tvheadend:latest
+
+See [README.Docker.md](README.Docker.md) in this repository for more details.
 
 How to build for Linux
 ----------------------

@@ -54,6 +54,7 @@ CFLAGS  += -Wmissing-prototypes
 CFLAGS  += -fno-strict-aliasing
 CFLAGS  += -fms-extensions -funsigned-char
 CFLAGS  += -D_FILE_OFFSET_BITS=64
+CFLAGS  += -D_TIME_BITS=64
 CFLAGS  += -I${BUILDDIR} -I${ROOTDIR}/src -I${ROOTDIR}
 ifeq ($(CONFIG_ANDROID),yes)
 LDFLAGS += -ldl -lm
@@ -274,6 +275,7 @@ SRCS-1 = \
 	src/intlconv.c \
 	src/profile.c \
 	src/bouquet.c \
+	src/ratinglabels.c \
 	src/lock.c \
 	src/string_list.c \
 	src/wizard.c \
@@ -319,6 +321,7 @@ SRCS-2 = \
 	src/api/api_caclient.c \
 	src/api/api_profile.c \
 	src/api/api_bouquet.c \
+	src/api/api_ratinglabel.c \
 	src/api/api_language.c \
 	src/api/api_satip.c \
 	src/api/api_timeshift.c \

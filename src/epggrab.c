@@ -271,7 +271,7 @@ static void _epggrab_load ( void )
                    epggrab_conf.epgdb_periodicsave * 3600);
 
   idnode_notify_changed(&epggrab_conf.idnode);
- 
+
   /* Load module config (channels) */
   eit_load();
   opentv_load();
@@ -328,8 +328,15 @@ epggrab_class_ota_cron_notify(void *self, const char *lang)
   epggrab_ota_set_cron();
 }
 
+static void
+epggrab_class_ota_genre_translation_notify(void *self, const char *lang)
+{
+  epggrab_ota_set_genre_translation();
+}
+
 CLASS_DOC(epgconf)
 PROP_DOC(cron)
+PROP_DOC(ota_genre_translation)
 
 const idclass_t epggrab_class = {
   .ic_snode      = &epggrab_conf.idnode,
@@ -353,7 +360,11 @@ const idclass_t epggrab_class = {
          .name   = N_("OTA (Over-the-air) Grabber Settings"),
          .number = 3,
       },
-      {}
+      {
+         .name   = N_("OTA (Over-the-air) Genre Translation"),
+         .number = 4,
+      },
+    {}
   },
   .ic_properties = (const property_t[]){
     {
@@ -416,6 +427,15 @@ const idclass_t epggrab_class = {
       .group  = 1,
     },
     {
+      .type   = PT_BOOL,
+      .id     = "epgdb_processparentallabels",
+      .name   = N_("Process Parental Rating Labels"),
+      .desc   = N_("Convert broadcast ratings codes into "
+                   "human-readable labels like 'PG' or 'FSK 16'."),
+      .off    = offsetof(epggrab_conf_t, epgdb_processparentallabels),
+      .group  = 1,
+    },
+    {
       .type   = PT_STR,
       .id     = "cron",
       .name   = N_("Cron multi-line"),
@@ -471,6 +491,21 @@ const idclass_t epggrab_class = {
       .opts   = PO_EXPERT,
       .group  = 3,
     },
+    {
+      .type   = PT_STR,
+      .id     = "ota_genre_translation",
+      .name   = N_("Over-the-air Genre Translation"),
+      .desc   = N_("Translate the genre codes received from the broadcaster to another genre code."
+                   "<br>Use the form xxx=yyy, where xxx and yyy are "
+                   "'ETSI EN 300 468' content descriptor values expressed in decimal (0-255). "
+                   "<br>Genre code xxx will be converted to genre code yyy."
+                   "<br>Use a separate line for each genre code to be converted."),
+      .doc    = prop_doc_ota_genre_translation,
+      .off    = offsetof(epggrab_conf_t, ota_genre_translation),
+      .notify = epggrab_class_ota_genre_translation_notify,
+      .opts   = PO_MULTILINE | PO_EXPERT,
+      .group  = 4,
+    },
     {}
   }
 };
@@ -510,6 +545,7 @@ void epggrab_init ( void )
   epggrab_conf.channel_reicon     = 0;
   epggrab_conf.epgdb_periodicsave = 0;
   epggrab_conf.epgdb_saveafterimport = 0;
+  epggrab_conf.epgdb_processparentallabels = 0;
 
   epggrab_cron_multi              = NULL;
 
@@ -540,7 +576,7 @@ void epggrab_init ( void )
 
   /* Initialise the OTA subsystem */
   epggrab_ota_init();
-  
+
   /* Load config */
   _epggrab_load();
 
