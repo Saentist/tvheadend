@@ -230,5 +230,5 @@ jobs:
           name: Tvheadend-RPM
           path: tvheadend*.rpm
           if-no-files-found: error
-      # - name: upload-cloudsmith
-      #   run: support/cloudsmith.sh -n -f 'tvheadend*.rpm'
+      - name: upload-cloudsmith
+        run: support/cloudsmith.sh -n -f 'tvheadend*.rpm'
