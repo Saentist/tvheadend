@@ -143,7 +143,7 @@ msgstr "Przerwij"
 
 #: src/webui/static/app/dvr.js:555
 msgid "Abort the selected recording"
-msgstr "Przerwij wybrane nagrywanie"
+msgstr "Przerwij wybrane nagranie"
 
 #: src/webui/static/app/tvheadend.js:1205
 msgid "About"
@@ -179,11 +179,11 @@ msgstr "Dodaj: {0}"
 
 #: src/webui/static/app/idnode.js:604 src/webui/static/app/idnode.js:620
 msgid "Advanced"
-msgstr "Zaawansowane"
+msgstr "Zaawansowany"
 
 #: src/webui/static/app/idnode.js:1054
 msgid "Advanced Settings"
-msgstr "Zaawansowane ustawienia"
+msgstr "Ustawienia zaawansowane"
 
 #: src/webui/static/app/i18n-post.js:279
 msgid "After"
@@ -285,11 +285,11 @@ msgstr "Automatyczne odświeżanie"
 #: src/webui/static/app/epg.js:434 src/webui/static/app/dvr.js:159
 #: src/webui/static/app/dvr.js:1077
 msgid "Autorec"
-msgstr "Autonagrywanie"
+msgstr "Autonagranie"
 
 #: src/webui/static/app/dvr.js:1078
 msgid "Autorecs"
-msgstr "Autonagrywania"
+msgstr "Autonagrania"
 
 #: src/webui/static/app/idnode.js:461 src/webui/static/app/idnode.js:701
 msgid "Available"
@@ -365,7 +365,7 @@ msgstr "CAIDS:"
 
 #: src/webui/static/app/caclient.js:34
 msgid "CAs"
-msgstr "Dostępy warunkowe (CA)"
+msgstr "Dostęp warunkowy (CA)"
 
 #: src/webui/static/app/i18n-post.js:111 src/webui/static/app/i18n-post.js:138
 #: src/webui/static/app/idnode.js:1140 src/webui/static/app/idnode.js:1562
@@ -556,7 +556,7 @@ msgstr "Utwórz"
 
 #: src/webui/static/app/epg.js:1293
 msgid "Create AutoRec"
-msgstr "Utwórz autonagrywanie"
+msgstr "Utwórz autonagranie"
 
 #: src/webui/static/app/epg.js:433 src/webui/static/app/epg.js:1295
 msgid ""
@@ -647,15 +647,15 @@ msgstr "Szczegóły"
 
 #: src/webui/static/app/dvr.js:1215
 msgid "Digital Video Recorder"
-msgstr "Cyfrowy rejestrator wideo"
+msgstr "Rejestrator (DVR)"
 
 #: src/webui/static/app/dvr.js:1047
 msgid "Digital Video Recorder Profile"
-msgstr "Profil cyfrowego rejestratora wideo"
+msgstr "Profil rejestratora (DVR)"
 
 #: src/webui/static/app/dvr.js:1048
 msgid "Digital Video Recorder Profiles"
-msgstr "Profile cyfrowego rejestratora wideo"
+msgstr "Profile rejestratora (DVR)"
 
 #: src/webui/static/app/tvheadend.js:368
 msgid "Director"
@@ -803,7 +803,7 @@ msgstr "Edytuj: {0} ({1} wpisów)"
 
 #: src/webui/static/app/epg.js:1341
 msgid "Electronic Program Guide"
-msgstr "Elektroniczny przewodnik po programach (EPG)"
+msgstr "Przewodnik (EPG)"
 
 #: src/webui/static/app/tvheadend.js:1464
 msgid "Enable debug output"
@@ -858,7 +858,7 @@ msgstr "Dodatkowy tekst"
 
 #: src/webui/static/app/epg.js:793 src/webui/static/app/epgevent.js:104
 msgid "Extra text: subtitle or summary or description"
-msgstr "Dodatkowy tekst: napisy, streszczenie lub opis"
+msgstr "Dodatkowy tekst: podytuł, streszczenie lub opis"
 
 #: src/webui/static/app/epg.js:295
 msgid "FHDTV"
@@ -1010,7 +1010,7 @@ msgstr "HDTV"
 
 #: src/webui/static/app/mpegts.js:223
 msgid "HbbTv"
-msgstr "HbbTv"
+msgstr "HbbTV"
 
 #: src/webui/static/app/idnode.js:1241 src/webui/static/app/idnode.js:2110
 #: src/webui/static/app/idnode.js:2516 src/webui/static/app/idnode.js:2961
@@ -1170,7 +1170,7 @@ msgstr "Mapuj wszystko"
 
 #: src/webui/static/app/mpegts.js:300
 msgid "Map Selected"
-msgstr "Mapuj wybrane"
+msgstr "Mapuj zaznaczone"
 
 #: src/webui/static/app/mpegts.js:281 src/webui/static/app/chconf.js:147
 msgid "Map all services"
@@ -1302,7 +1302,7 @@ msgstr "Harmonogram multipleksera"
 
 #: src/webui/static/app/mpegts.js:422
 msgid "Mux Schedulers"
-msgstr "Harmonogramy multipleksera"
+msgstr "Harmonogramy multiplekserów"
 
 #: src/webui/static/app/mpegts.js:98
 msgid "Muxes"
@@ -1356,7 +1356,7 @@ msgstr "Nie zweryfikowany dostęp"
 #. / {0} title (lowercase), {1} title
 #: src/webui/static/app/tvheadend.js:702
 msgid "No {0} to display"
-msgstr "Brak {0} do wyświetlenia"
+msgstr "Brak: {0} do wyświetlenia"
 
 #: src/webui/static/app/idnode.js:1999 src/webui/static/app/mpegts.js:209
 #: src/webui/static/app/mpegts.js:219
@@ -1588,7 +1588,7 @@ msgstr ""
 
 #: src/webui/static/app/idnode.js:1058
 msgid "Read-only Info"
-msgstr "Informacje do odczytu"
+msgstr "Informacje tylko do odczytu"
 
 #: src/webui/static/app/comet.js:21
 msgid "Reconnected to Tvheadend"
@@ -1697,7 +1697,7 @@ msgstr "Resetuj wszystkie filtry (pokaż wszystko)"
 #: src/webui/static/app/idnode.js:1835 src/webui/static/app/idnode.js:2345
 #: src/webui/static/app/idnode.js:2891
 msgid "Revert pending changes (marked with red border)"
-msgstr "Cofnij oczekujące zmiany (zaznaczone czerwonym narożnikiem)"
+msgstr "Cofnij oczekujące zmiany (oznaczone czerwoną ramką)"
 
 #: src/webui/static/app/config.js:145
 msgid "SAT>IP Server"
@@ -1731,7 +1731,7 @@ msgstr "Zapisz i następna"
 #: src/webui/static/app/idnode.js:1808 src/webui/static/app/idnode.js:2323
 #: src/webui/static/app/idnode.js:2870
 msgid "Save pending changes (marked with red border)"
-msgstr "Zapisz oczekujące zmiany (zaznaczone czerwonym narożnikiem)"
+msgstr "Zapisz oczekujące zmiany (oznaczone czerwoną ramką)"
 
 #: src/webui/static/app/dvr.js:111
 msgid "Scheduled Start Time"
@@ -1858,7 +1858,7 @@ msgstr "Uruchom kreator"
 
 #: src/webui/static/app/status.js:727
 msgid "Started"
-msgstr "Rozpoczęty"
+msgstr "Rozpoczęto"
 
 #: src/webui/static/app/status.js:155
 msgid "State"
@@ -1866,7 +1866,7 @@ msgstr "Stan"
 
 #: src/webui/static/app/dvr.js:153 src/webui/static/app/status.js:826
 msgid "Status"
-msgstr "Stan"
+msgstr "Status"
 
 #: src/webui/static/app/dvr.js:541 src/webui/static/app/tvheadend.js:943
 msgid "Stop"
@@ -1931,7 +1931,7 @@ msgstr "Filtry strumieni napisów"
 
 #: src/webui/static/app/epg.js:311
 msgid "Subtitled#EPG"
-msgstr "Napisy#EPG"
+msgstr "Podytuł#EPG"
 
 #: src/webui/static/app/i18n-post.js:93
 msgid "Sun"
@@ -2110,7 +2110,7 @@ msgstr "Błędy transportowe"
 
 #: src/webui/static/app/epggrab.js:26
 msgid "Trigger OTA EPG Grabber"
-msgstr "Wyzwól grabbera OTA EPG"
+msgstr "Uruchom grabber OTA EPG"
 
 #: src/webui/static/app/i18n-post.js:95
 msgid "Tue"
@@ -2165,7 +2165,7 @@ msgstr "Nieznany"
 
 #: src/webui/static/app/dvr.js:606
 msgid "Upcoming / Current Recordings"
-msgstr "Nadchodzące / Obecne nagrania"
+msgstr "Nadchodzące (bieżące) nagrania"
 
 #: src/webui/static/app/dvr.js:605
 msgid "Upcoming Recording"
@@ -2173,7 +2173,7 @@ msgstr "Nadchodzące nagranie"
 
 #: src/webui/static/app/tvheadend.js:1357
 msgid "Used by tvheadend"
-msgstr "Używany przez Tvheadend"
+msgstr "Używana przez Tvheadend"
 
 #: src/webui/static/app/status.js:102 src/webui/static/app/status.js:721
 msgid "Username"
@@ -2229,7 +2229,7 @@ msgstr "Środa"
 
 #: src/webui/static/app/status.js:420
 msgid "Weight"
-msgstr "Waga"
+msgstr "Ranga"
 
 #: src/webui/static/app/dvr.js:754
 msgid "When enabled, group the recordings by the selected column."

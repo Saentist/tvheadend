@@ -16,8 +16,9 @@ jobs:
       GITHUB_ENV: CLOUDSMITH_API_KEY
       CLOUDSMITH_ORG: ${{ vars.CLOUDSMITH_ORG }}
       CLOUDSMITH_REPO: ${{ vars.CLOUDSMITH_REPO }}
-      CLOUDSMITH_OWNER: ${{ vars.CLOUDSMITH_OWNER }}
+      CLOUDSMITH_OWNER: ${{ secrets.CLOUDSMITH_OWNER }}
       CLOUDSMITH_API_KEY: ${{ secrets.CLOUDSMITH_KEY }}
+      NODIRTY: ${{ secrets.NODIRTY }}
     strategy:
       matrix:
         arch: [armv6l, armv7l, aarch64]
@@ -67,7 +68,7 @@ jobs:
     strategy:
       matrix:
        arch: [ armv7, aarch64]
-       distro: [ stretch, buster, bullseye, ubuntu16.04, ubuntu18.04, ubuntu20.04, ubuntu22.04 ]
+       distro: [ stretch, buster, bullseye, bookworm, ubuntu16.04, ubuntu18.04, ubuntu20.04, ubuntu22.04, ubuntu_latest ]
        include:
          - arch: armv6
            distro: jessie
@@ -107,8 +108,9 @@ jobs:
             artifact_name: git-${{ matrix.distro }}_${{ matrix.arch }}
             CLOUDSMITH_ORG: ${{ vars.CLOUDSMITH_ORG }}
             CLOUDSMITH_REPO: ${{ vars.CLOUDSMITH_REPO }}
-            CLOUDSMITH_OWNER: ${{ vars.CLOUDSMITH_OWNER }}
+            CLOUDSMITH_OWNER: ${{ secrets.CLOUDSMITH_OWNER }}
             CLOUDSMITH_API_KEY: ${{ secrets.CLOUDSMITH_KEY }}
+            NODIRTY: ${{ secrets.NODIRTY }}
 
 
           # The shell to run commands with in the container
@@ -164,7 +166,7 @@ jobs:
     name: Build on native ${{ matrix.container }}
     strategy:
       matrix:
-        container: ["i386/ubuntu:trusty", "ubuntu:trusty", "i386/ubuntu:xenial", "ubuntu:xenial", "ubuntu:bionic", "ubuntu:focal", "ubuntu:jammy", "i386/debian:stretch", "debian:stretch", "i386/debian:buster", "debian:buster", "i386/debian:bullseye", "debian:bullseye", "i386/debian:bookworm", "debian:bookworm", "i386/debian:trixie", "debian:trixie", "i386/debian:sid", "debian:sid"]
+        container: ["i386/ubuntu:trusty", "ubuntu:trusty", "i386/ubuntu:xenial", "ubuntu:xenial", "ubuntu:bionic", "ubuntu:focal", "ubuntu:jammy", "ubuntu:noble", "i386/debian:stretch", "debian:stretch", "i386/debian:buster", "debian:buster", "i386/debian:bullseye", "debian:bullseye", "i386/debian:bookworm", "debian:bookworm", "i386/debian:trixie", "debian:trixie", "i386/debian:sid", "debian:sid"]
     container:
       image: ${{ matrix.container }}
     steps:
@@ -197,6 +199,8 @@ jobs:
         run: git config --global --add safe.directory /__w/tvheadend/tvheadend
       - name: build
         run: AUTOBUILD_CONFIGURE_EXTRA=--enable-ccache\ --enable-ffmpeg_static\ --enable-hdhomerun_static\ --python=python3 ./Autobuild.sh ${{ (startsWith(matrix.container, 'i386') && '-a i386') || '' }}
+        env:
+          NODIRTY: ${{ secrets.NODIRTY }}
       - name: copy-result
         run: cp ../tvheadend*.deb .
       - uses: actions/upload-artifact@v3
@@ -210,7 +214,7 @@ jobs:
         env:
           CLOUDSMITH_ORG: ${{ vars.CLOUDSMITH_ORG }}
           CLOUDSMITH_REPO: ${{ vars.CLOUDSMITH_REPO }}
-          CLOUDSMITH_OWNER: ${{ vars.CLOUDSMITH_OWNER }}
+          CLOUDSMITH_OWNER: ${{ secrets.CLOUDSMITH_OWNER }}
           CLOUDSMITH_API_KEY: ${{ secrets.CLOUDSMITH_KEY }}
 
   build-rpm-native:
@@ -246,5 +250,5 @@ jobs:
         env:
           CLOUDSMITH_ORG: ${{ vars.CLOUDSMITH_ORG }}
           CLOUDSMITH_REPO: ${{ vars.CLOUDSMITH_REPO }}
-          CLOUDSMITH_OWNER: ${{ vars.CLOUDSMITH_OWNER }}
+          CLOUDSMITH_OWNER: ${{ secrets.CLOUDSMITH_OWNER }}
           CLOUDSMITH_API_KEY: ${{ secrets.CLOUDSMITH_KEY }}
